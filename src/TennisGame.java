@@ -14,7 +14,7 @@ public class TennisGame {
 	}
 	
 	public int getCurrentGameScore(){
-		return -1;
+		return 0;
 	}
 	
 }
