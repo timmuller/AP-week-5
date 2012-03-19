@@ -6,7 +6,7 @@ public class TennisGame {
 	}
 	
 	public int getWonGames(){
-		return -1;
+		return 0;
 	}
 	
 }
