@@ -10,22 +10,28 @@ public class TennisGameTest extends TestCase{
 	}
 	
 	public void testLoveSet(){
-		int games = 24;
-		boolean wonAllGames = false;
-		this.playGames(games, wonAllGames);
+		int serves = 24;
+		boolean wonAllServes = false;
+		this.playServes(serves, wonAllServes);
 		int score = t.getWonGames();
 		assertEquals(0, score);
 	}
 	
 	public void testWonSet(){
-		int games = 24;
+		int serves = 24;
 		boolean wonAllGames = true;
-		this.playGames(games, wonAllGames);
+		this.playServes(serves, wonAllGames);
 		int score = t.getWonGames();
-		assertEquals(24, score);
+		assertEquals(6, score);
 	}
 	
-	public void playGames(int total, boolean result){
+	public void testCurrentGameScore(){
+		this.playServes(4, false);
+		int score = t.getCurrentGameScore();
+		assertEquals(0, score);
+	}
+	
+	public void playServes(int total, boolean result){
 		for(int i = 0; i < total; i++){
 			t.wonGame(result);
 		}
