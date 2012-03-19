@@ -25,11 +25,18 @@ public class TennisGameTest extends TestCase{
 		assertEquals(6, score);
 	}
 	
-	public void testCurrentGameScore(){
+	public void testCurrentGameScoreLostAll(){
 		this.playServes(4, false);
 		int score = t.getCurrentGameScore();
 		assertEquals(0, score);
 	}
+	
+	public void testCurrentGameScoreWinAll(){
+		this.playServes(4, true);
+		int score = t.getCurrentGameScore();
+		assertEquals(4, score);
+	}
+	
 	
 	public void playServes(int total, boolean result){
 		for(int i = 0; i < total; i++){
